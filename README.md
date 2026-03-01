@@ -1,8 +1,6 @@
 # pic2art
 
-Transform photos into artistic styles with pure code
-
-将照片转换为艺术风格的纯代码工具
+Transform photos into artistic styles
 
 ---
 
@@ -31,9 +29,7 @@ Transform photos into artistic styles with pure code
 
 ## About
 
-A pure-code image stylization tool. Currently supports **LEGO Mosaic** style with realistic physical details: brick gaps, plastic reflections, color variations, and ambient occlusion.
-
-纯代码实现的图片风格化工具。当前支持 **LEGO 马赛克**风格，模拟砖缝、塑料反光、颜色微差、环境光遮蔽等物理细节。
+Image stylization tool. Currently supports **LEGO Mosaic** style with realistic physical details: brick gaps, plastic reflections, color variations, and ambient occlusion.
 
 ### Styles
 
