@@ -13,16 +13,16 @@ Transform photos into artistic styles with pure code
 <table>
   <tr>
     <td align="center">
-      <a href="https://supergeoffroy.tumblr.com/image/62165078257">
-        <img src="https://64.media.tumblr.com/8e0a8c8f0e0e0e0e0e0e0e0e0e0e0e0e/tumblr_mu3q3qQ3Q31qzun8oo1_1280.jpg" width="300" alt="Mona Lisa LEGO Mosaic"/>
-        <br/>Mona Lisa
-      </a>
+      <img src="examples/lego/inspiration/girl_with_pearl_earring.jpg" width="250" alt="Girl with a Pearl Earring"/>
+      <br/><em>Girl with a Pearl Earring</em>
     </td>
     <td align="center">
-      <a href="https://supergeoffroy.tumblr.com/image/62319521313">
-        <img src="https://64.media.tumblr.com/tumblr_mu6q6qQ3Q31qzun8oo1_1280.jpg" width="300" alt="Van Gogh LEGO Mosaic"/>
-        <br/>Van Gogh
-      </a>
+      <img src="examples/lego/inspiration/mona_lisa.jpg" width="250" alt="Mona Lisa"/>
+      <br/><em>Mona Lisa</em>
+    </td>
+    <td align="center">
+      <img src="examples/lego/inspiration/van_gogh_self_portrait.jpg" width="250" alt="Van Gogh Self-Portrait"/>
+      <br/><em>Van Gogh Self-Portrait</em>
     </td>
   </tr>
 </table>
@@ -49,21 +49,35 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Interactive Mode
+### Unified Entry Point (Recommended)
 
 ```bash
-python lego_mosaic.py
+# Interactive mode - select style
+python pic2art.py
+
+# Direct style selection
+python pic2art.py --style lego
+
+# With parameters
+python pic2art.py --style lego --in photo.png --out result.png
+
+# List available styles
+python pic2art.py --list
 ```
 
-The program will recommend 5 preset options and render after selection.
-
-### CLI Mode
+### Direct Style Access (Backward Compatible)
 
 ```bash
+# LEGO Mosaic - Interactive mode
+python lego_mosaic.py
+
+# LEGO Mosaic - CLI mode
 python lego_mosaic.py --in photo.png --out result.png
 ```
 
 ## Parameters
+
+### LEGO Mosaic Style
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
@@ -75,6 +89,24 @@ python lego_mosaic.py --in photo.png --out result.png
 | `--fresnel` | 0.5 | Plastic reflection strength (0~1.0) |
 | `--color-var` | 0.4 | Color variation strength (0~1.0) |
 | `--ao` | 0.5 | Ambient occlusion strength (0~1.0) |
+
+## Project Structure
+
+```
+pic2art/
+├── pic2art.py          # Unified entry point
+├── lego_mosaic.py      # Backward compatibility wrapper
+├── styles/             # Style implementations
+│   ├── lego_mosaic.py
+│   └── (future styles)
+├── examples/           # Example images
+│   ├── lego/
+│   │   ├── inspiration/  # Geoffroy Amelot's works
+│   │   ├── input/
+│   │   └── output/
+│   └── (future styles)
+└── requirements.txt
+```
 
 ## Requirements
 
