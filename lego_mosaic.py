@@ -38,6 +38,31 @@ from PIL import Image
 _CONF_NAME = ".lego_mosaic.conf"
 
 STRINGS = {
+    "en": {
+        "title": "🧱 LEGO Mosaic Generator",
+        "ask_lang": "\n  Language / 语言:\n  [1] 中文\n  [2] English\n  Choose / 选择 [1/2]: ",
+        "lang_saved": "  ✅ Saved. English will be used by default (use --lang cn to switch)",
+        "ask_path": "\nEnter image path (Tab completion): ",
+        "file_not_found": "  File not found: {}",
+        "image_info": "\n📷 Image: {} ({}x{})",
+        "presets_header": "\nPreset options:",
+        "preset_line": "  [{}] {}  {}x{}  tile={}  -> output {}x{}{}",
+        "recommended": " (recommended)",
+        "presets_footer": "\n  colors: 22  vignette: 0.20  gap: 0.6  fresnel: 0.5  color-var: 0.4  ao: 0.5",
+        "choose_preset": "\nChoose [1-5] or [c] custom (default 3): ",
+        "invalid_choice": "  Invalid input, using recommended preset",
+        "custom_header": "\nCustom parameters (press Enter for defaults):",
+        "custom_grid_w": "  Grid width (studs): ",
+        "custom_grid_h": "  Grid height (studs): ",
+        "custom_tile": "  Tile size (pixels): ",
+        "custom_colors": "  Palette colors: ",
+        "rendering": "\n⏳ Rendering...",
+        "saved": "\n✅ Saved: {}  ({}x{})",
+        "next_action": "\n[Enter] Try another  /  [o] Open image  /  [q] Quit: ",
+        "opening": "  Opening...",
+        "bye": "\n👋 Bye!",
+        "preset_names": ["Mini", "Light", "Normal", "Fine", "Ultra"],
+    },
     "cn": {
         "title": "🧱 LEGO 马赛克生成器",
         "ask_lang": "\n  Language / 语言:\n  [1] 中文\n  [2] English\n  选择 / Choose [1/2]: ",
@@ -136,12 +161,12 @@ def _save_lang(lang: str):
 
 def _ask_lang() -> str:
     """First-run language selection."""
-    print(STRINGS["cn"]["ask_lang"], end="", flush=True)
+    print(STRINGS["en"]["ask_lang"], end="", flush=True)
     choice = input().strip()
-    if choice == "2":
-        lang = "en"
-    else:
+    if choice == "1":
         lang = "cn"
+    else:
+        lang = "en"
     _save_lang(lang)
     print(STRINGS[lang]["lang_saved"])
     return lang
