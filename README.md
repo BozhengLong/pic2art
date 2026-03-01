@@ -50,14 +50,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-# Interactive mode - select style and configure
 python pic2art.py
-
-# List available styles
-python pic2art.py --list
-
-# Direct usage with parameters
-python pic2art.py --style lego --in photo.png --out result.png
 ```
 
 ## Parameters
