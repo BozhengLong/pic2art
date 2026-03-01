@@ -49,6 +49,14 @@ python lego_mosaic.py --in photo.png --out result.png
 - Pillow >= 9.0.0
 - NumPy >= 1.21.0
 
+## Inspiration
+
+Inspired by the LEGO mosaic artwork of [Geoffroy Amelot](https://supergeoffroy.tumblr.com/archive/2013/10).
+
+Notable works:
+- [Mona Lisa](https://supergeoffroy.tumblr.com/image/62165078257)
+- [Van Gogh](https://supergeoffroy.tumblr.com/image/62319521313)
+
 ## License
 
 MIT
