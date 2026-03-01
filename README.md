@@ -49,30 +49,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Unified Entry Point (Recommended)
-
 ```bash
-# Interactive mode - select style
+# Interactive mode - select style and configure
 python pic2art.py
-
-# Direct style selection
-python pic2art.py --style lego
-
-# With parameters
-python pic2art.py --style lego --in photo.png --out result.png
 
 # List available styles
 python pic2art.py --list
-```
 
-### Direct Style Access (Backward Compatible)
-
-```bash
-# LEGO Mosaic - Interactive mode
-python lego_mosaic.py
-
-# LEGO Mosaic - CLI mode
-python lego_mosaic.py --in photo.png --out result.png
+# Direct usage with parameters
+python pic2art.py --style lego --in photo.png --out result.png
 ```
 
 ## Parameters
@@ -94,17 +79,14 @@ python lego_mosaic.py --in photo.png --out result.png
 
 ```
 pic2art/
-├── pic2art.py          # Unified entry point
-├── lego_mosaic.py      # Backward compatibility wrapper
+├── pic2art.py          # Main entry point
 ├── styles/             # Style implementations
-│   ├── lego_mosaic.py
-│   └── (future styles)
+│   └── lego_mosaic.py
 ├── examples/           # Example images
-│   ├── lego/
-│   │   ├── inspiration/  # Geoffroy Amelot's works
-│   │   ├── input/
-│   │   └── output/
-│   └── (future styles)
+│   └── lego/
+│       ├── inspiration/  # Geoffroy Amelot's works
+│       ├── input/
+│       └── output/
 └── requirements.txt
 ```
 
